@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let letter = [-4, -4, 0, 10,12, 13, -5, 13,0]
+        let possitiveCount = 0;
+        let negativeCount = 0;
+        let zero = 0;
+        let sum = 0;
+
+        for(let i=0; i < letter.length; i++) {
+
+            sum += letter[i];
+
+            if(letter[i] > 0){
+                possitiveCount++;
+            }
+
+            else if(letter[i] < 0){
+                negativeCount++;
+            }
+
+            else {
+                zero++;
+            }
+        }
+
+        console.log("Positive Number Count: " + possitiveCount);
+        console.log("Negative Number Count: " + negativeCount);
+        console.log("Zero: " + zero);
+        console.log("Total sum: " + sum);
+    </script>
+</body>
+</html>

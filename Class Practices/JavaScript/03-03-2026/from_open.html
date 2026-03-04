@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="f">
+
+        <label for="">ID: </label><br>
+        <input type="number" name="id"> <br> <br>
+
+        <label for="">First Name: </label><br>
+        <input type="text" name="n"> <br> <br>
+
+        <label for="">Last Name: </label><br>
+        <input type="text" name="n"> <br> <br>
+
+        <label for="">Name: </label><br>
+        <input type="text" name="fn"> <br> <br>
+
+        <label for="">Email: </label><br>
+        <input type="email" name="emd"> <br> <br>
+
+        <label for="">Address: </label><br>
+        <textarea name="" id=""></textarea>
+
+        <input type="submit" value="Submit" onclick="info()">
+        <input type="reset" value="Reset">
+    </form>
+    <script>
+        function info() {
+            nam = document.f.fn.value;
+            id = document.f.id.value;
+            emd = document.f.emd.value;
+            store = window.open("", "", "width = 400, height = 400");
+            store.document.write("Student Name: " + nam + "<br>");
+            store.document.write("ID: " + id + "<br>");
+            store.document.write("Email: " + emd + "<br>");
+        }
+    </script>
+</body>
+
+</html>

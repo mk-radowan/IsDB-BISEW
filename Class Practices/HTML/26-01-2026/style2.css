@@ -1,0 +1,11 @@
+table{
+    sborder-collapse: collapse;
+     width: 60%; 
+     border: 2px solid black;
+}
+
+tr, td{
+     sborder-collapse: collapse;
+     width: 60%; 
+     border: 2px solid black;
+}

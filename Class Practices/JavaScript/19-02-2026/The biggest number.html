@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var num1, num2, num3;
+
+        num1 = Number(prompt("Input the 1st number: "));
+        num2 = Number(prompt("Input the 2nd number: "));
+        num3 = Number(prompt("Input the 3rd number: "));
+
+        if ((num1 > num2) && (num1 > num3)){
+            document.writeln(num1, " is biggest number");
+        }
+
+         else if ((num2 > num3) && (num2 > num1)){
+            document.writeln(num2, " is biggest number");
+        }
+
+        else{
+            document.writeln(num3, " is biggest number");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        var data = [4, 4, -4, -1, 0, -8, 0, 45, 9, 79];
+        let positiveCount = 0;
+        let negativeCount = 0;
+        let zeroCount = 0;
+        let sum = 0;
+
+        for(let i = 0; i <data.length; i++ ){
+            sum += data[i];
+
+            if (data[i] > 0){
+                positiveCount++;
+            }
+
+            else if(data[i] < 0){
+                negativeCount++;
+            }
+
+            else{
+                zeroCount++;
+            }
+        }
+
+        console.log("Positive number: " + positiveCount);
+        console.log("Negative number: " + negativeCount);
+        console.log("Number of Zero: " + zeroCount);
+        console.log("Total sum: " + sum);
+
+    </script>
+</body>
+</html>

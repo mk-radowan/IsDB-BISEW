@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // var num = Number(prompt("Input any number: "));
+        // let result = (num > 10) ? "Condition is true" : "Condition is false";
+        // document.writeln(num," ", result);
+
+        var num1, num2, num3;
+        num1 = Number(prompt("Input the 1st number: "));
+        num2 = Number(prompt("Input the 2nd number: "));
+        num3 = Number(prompt("Input the 3rd number: "));
+        let result = (num1 > num2 && num1 > num3) ? num1 : (num2 > num3) ? num2 : num3;
+        
+        document.writeln(result, " is biggest number");
+    </script>
+</body>
+</html>

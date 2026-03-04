@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const number = Number(prompt("Input range"));
+        let first = 0, secenod = 1, next;
+
+        for (i = 1; i <= number; i++) {
+            document.write(first + " , ");
+
+            next = first + secenod;
+            first = secenod;
+            secenod = next;
+        }
+    </script>
+</body>
+
+</html>

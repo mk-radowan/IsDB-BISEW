@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var mark = Number(prompt("Input mark: "));
+        var result ;
+        switch (true){
+            case (mark >= 80 && mark <= 100) :
+                            result = "A+";
+                            break;
+            
+            case (mark >=70 && mark <=80 )  :
+                             result = "A";
+                            break;   
+                            
+            case (mark >=60 && mark <=70 )  :
+                             result = "B";
+                            break;  
+             case (mark >=0 && mark <=60 )  :
+                             result = "F";
+                            break;                  
+                
+            default :
+                  result = "Invaild mark"
+                          
+        }
+
+         document.writeln("GPA: " + result ) ;
+         
+    </script>
+</body>
+</html>

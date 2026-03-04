@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find out maximum number</title>
+</head>
+
+<body>
+    <script>
+        let num1 = Number(prompt("Input 1st number: "));
+        let num2 = Number(prompt("Input 2nd number: "));
+        let num3 = Number(prompt("Input 3rd number: "));
+        let result;
+        switch (true) {
+            case num1 > num2 && num1 > num3:
+                result = num1;
+                break;
+
+            case num2 > num1 && num2 > num3:
+                result = num2;
+                break;
+
+            default:
+                result = num3;
+        }
+
+        document.writeln("The maximum among three number: " + result);
+    </script>
+</body>
+
+</html>

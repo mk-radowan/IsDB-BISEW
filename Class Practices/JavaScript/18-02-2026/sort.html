@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+         var latter = ["Z", "C", "E", "B", "A", "I","M","N"];
+
+         console.log(latter);
+         document.writeln(latter);
+         latter.sort();
+         console.log(latter);
+         document.writeln(latter);
+
+         latter.reverse();
+         console.log(latter);
+
+         //number value sort role 
+
+         let num = [50, 30,40,20,5,15,29];
+         console.log(num);
+         num.sort(function (a, b) {
+            return a - b
+         });
+
+          console.log(num);
+
+           num.sort(function (a, b) {
+            return b - a
+         });
+
+          console.log(num);
+    </script>
+</body>
+</html>

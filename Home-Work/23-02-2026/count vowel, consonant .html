@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let data = ['a', 'E', 'b', 'J', 'k', 'i', 'F', 'b'] ;
+
+        let vowelCount = 0;
+        let consonantCount = 0;
+        let occurence = {};
+
+        for (let i = 0; i < data.length; i++){
+                let char = data[i].toLowerCase();
+
+                if (char >= 'a' && char <= 'z'){
+                    occurence[char] = (occurence[char] || 0) +1;
+
+                    switch (char) {
+                        case 'a':
+                        case 'e':
+                        case 'i':
+                        case 'o':
+                        case 'u':
+                             vowelCount++;
+                              break;
+
+                       default:
+                            consonantCount++;
+        }
+                }
+        }
+
+        console.log("Total vowel: " + vowelCount);
+        console.log("Total consonant: " + consonantCount);
+        console.log("Latter occurence: " , occurence);
+    </script>
+</body>
+</html>

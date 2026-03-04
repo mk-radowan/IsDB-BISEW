@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var data = [4,4,-4,-1,0,-8,0,45,9,79];
+        let largerNumber = data[0];
+        let smallestNumber = data[0];
+        let sum = 0;
+
+        for (i = 0; i < data.length; i++){
+            let current = data[i];
+
+            sum += current;
+
+            if (current > largerNumber){
+                largerNumber = current;
+            }
+
+            else if (current < smallestNumber){
+                smallestNumber = current;
+            }
+        }
+
+        console.log("Largest Number: " + largerNumber);
+        console.log("Smallest Number: " + smallestNumber);
+        console.log("Sum: " + sum);
+    </script>
+</body>
+</html>
