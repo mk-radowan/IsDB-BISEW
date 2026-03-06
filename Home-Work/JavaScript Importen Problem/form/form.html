@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>form</title>
 </head>
 
 <body>
@@ -29,12 +29,12 @@
 
             <label for="">District:</label> <br>
             <select id="" name="dist">
-                <option value="">Select city</option>
-                <option value="">Rangpur</option>
-                <option value="">Dhaka</option>
-                <option value="">Rajshahi</option>
-                <option value="">Chattogram</option>
-                <option value="">Sylhet</option>
+                <option value="Select city">Select city</option>
+                <option value="Rangpur" name="dist">Rangpur</option>
+                <option value="Dhaka" name="dist">Dhaka</option>
+                <option value="Rajshahi" name="dist">Rajshahi</option>
+                <option value="Chattogram" name="dist">Chattogram</option>
+                <option value="Sylhet" name="dist">Sylhet</option>
             </select> <br> <br>
             <label for="">
                 Address:
@@ -58,11 +58,11 @@
             <label for="">MSc</label> <br><br>
 
             <label for="">Gender: </label>
-            <input type="radio" name="genRadio" id="">
+            <input type="radio" name="genRadio" value="Male">
             <label for="">Male</label>
-            <input type="radio" name="genRadio" id="">
+            <input type="radio" name="genRadio" value="Femel">
             <label for="">Femel</label>
-            <input type="radio" name="genRadio" id="">
+            <input type="radio" name="genRadio" value="Other's">
             <label for="">Other's</label> <br> <br>
             <input type="submit" value="Submit" onclick="dyn_window()">
         </fieldset>
@@ -75,9 +75,27 @@
             var phone = document.f.phone.value;
             var district = document.f.dist.value;
             var address = document.f.address.value;
-            var edu = document.f.edu.value;
-            var gender = document.f.genRadio.value;
+            
+            var district = " ";
+                for(i=0; i<document.f.dist.length; i++){
+                    if(document.f.dist[i].selected){
+                        district = document.f.dist[i].value;
+                    }
+                }
+            
+            var education = " ";
+            for(j = 0; j<document.f.edu.length; j++){
+                if(document.f.edu[j].checked){
+                    education += document.f.edu[j].value + " ";
+                }
+            }
 
+            var gender = " ";
+            for(i=0; i<document.f.genRadio.length; i++){
+                if(document.f.genRadio[i].checked){
+                    gender = document.f.genRadio[i].value;
+                }
+            }
 
             doc = open("", "", "width=600px, height=600px");
 
@@ -87,8 +105,10 @@
             doc.document.write("Contac Number: " + phone + "<br>");
             doc.document.write("District: " + district + "<br>");
             doc.document.write("Address: " + address + "<br>");
-            doc.document.write("Education: " + edu + "<br>");
+            doc.document.write("Education: " + education + "<br>");
             doc.document.write("Gender: " + gender + "<br>");
+            doc.document.write("<input type='button' value='Close me' onclick='self.close()'>" + " ");
+             doc.document.write("   " + "<input type='button' value='Print' onclick='self.print()'>");
         }
     </script>
 </body>
