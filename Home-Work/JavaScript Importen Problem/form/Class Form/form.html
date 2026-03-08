@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+
+<body>
+    <form action="" name="f">
+        <fieldset>
+            <legend>Student Registration Form</legend>
+            <label for=""> ID:
+            </label> <br>
+            <input type="number" name="id" id=""> <br> <br>
+            <label for="">
+                Name:
+            </label> <br>
+            <input type="text" name="name" id=""> <br> <br>
+            <label for="">
+                Email:
+            </label> <br>
+            <input type="email" name="email" id=""> <br> <br>
+            <label for="">
+                Phone:
+            </label> <br>
+            <input type="number" name="phone" id=""> <br> <br>
+
+            <label for="">District:</label> <br>
+            <select id="" name="dist">
+                <option value="Select city">Select city</option>
+                <option value="Rangpur" name="dist">Rangpur</option>
+                <option value="Dhaka" name="dist">Dhaka</option>
+                <option value="Rajshahi" name="dist">Rajshahi</option>
+                <option value="Chattogram" name="dist">Chattogram</option>
+                <option value="Sylhet" name="dist">Sylhet</option>
+            </select> <br> <br>
+            <label for="">
+                Address:
+            </label> <br>
+            <textarea name="address" id=""></textarea> <br> <br>
+
+            <label for="">Education: </label>
+            <input type="checkbox" name="edu" value="SSC">
+            <label for="">SSC</label>
+
+            <input type="checkbox" name="edu" value="HSC">
+            <label for="">HSC</label>
+
+            <input type="checkbox" name="edu" value="Diploma">
+            <label for="">Diploma</label>
+
+            <input type="checkbox" name="edu" value="BSc">
+            <label for="">BSc</label>
+
+            <input type="checkbox" name="edu" value="MSc">
+            <label for="">MSc</label> <br><br>
+
+            <label for="">Gender: </label>
+            <input type="radio" name="genRadio" value="Male">
+            <label for="">Male</label>
+            <input type="radio" name="genRadio" value="Femel">
+            <label for="">Femel</label>
+            <input type="radio" name="genRadio" value="Other's">
+            <label for="">Other's</label> <br> <br>
+            <input type="submit" value="Submit" onclick="dyn_window()">
+        </fieldset>
+    </form>
+    <script>
+        function dyn_window() {
+            var id = document.f.id.value;
+            var nam = document.f.name.value;
+            var email = document.f.email.value;
+            var phone = document.f.phone.value;
+            var district = document.f.dist.value;
+            var address = document.f.address.value;
+            
+            var district = " ";
+                for(i=0; i<document.f.dist.length; i++){
+                    if(document.f.dist[i].selected){
+                        district = document.f.dist[i].value;
+                    }
+                }
+            
+            var education = " ";
+            for(j = 0; j<document.f.edu.length; j++){
+                if(document.f.edu[j].checked){
+                    education += document.f.edu[j].value + " ";
+                }
+            }
+
+            var gender = " ";
+            for(i=0; i<document.f.genRadio.length; i++){
+                if(document.f.genRadio[i].checked){
+                    gender = document.f.genRadio[i].value;
+                }
+            }
+
+            doc = open("", "", "width=600px, height=600px");
+
+            doc.document.write("ID: " + id + "<br>");
+            doc.document.write("Name: " + nam + "<br>");
+            doc.document.write("Email: " + email + "<br>");
+            doc.document.write("Contac Number: " + phone + "<br>");
+            doc.document.write("District: " + district + "<br>");
+            doc.document.write("Address: " + address + "<br>");
+            doc.document.write("Education: " + education + "<br>");
+            doc.document.write("Gender: " + gender + "<br>");
+            doc.document.write("<input type='button' value='Close me' onclick='self.close()'>" + " ");
+             doc.document.write("   " + "<input type='button' value='Print' onclick='self.print()'>");
+        }
+    </script>
+</body>
+
+</html>

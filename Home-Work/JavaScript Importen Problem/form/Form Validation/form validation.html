@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" name="myForm" onsubmit="return validateForm()">
+        <fieldset>
+            <legend>Student Registration Form</legend>
+            <label for=""> ID:
+            </label> <br>
+            <input type="number" name="id" id=""> <br> <br>
+            <label for="">
+                Name:
+            </label> <br>
+            <input type="text" name="name" id=""> <br> <br>
+            <label for="">
+                Email:
+            </label> <br>
+            <input type="text" name="email" id=""> <br> <br>
+            <label for="">
+                Phone:
+            </label> <br>
+            <input type="text" name="phone"> <br> <br>
+
+            <label for="">District:</label> <br>
+            <select id="" name="dist">
+                <option value="Select city">Select city</option>
+                <option value="Rangpur" name="dist">Rangpur</option>
+                <option value="Dhaka" name="dist">Dhaka</option>
+                <option value="Rajshahi" name="dist">Rajshahi</option>
+                <option value="Chattogram" name="dist">Chattogram</option>
+                <option value="Sylhet" name="dist">Sylhet</option>
+            </select> <br> <br>
+            <label for="">
+                Address:
+            </label> <br>
+            <textarea name="address" id=""></textarea> <br> <br>
+
+            <label for="">Education: </label>
+            <input type="checkbox" name="edu" value="SSC">
+            <label for="">SSC</label>
+
+            <input type="checkbox" name="edu" value="HSC">
+            <label for="">HSC</label>
+
+            <input type="checkbox" name="edu" value="Diploma">
+            <label for="">Diploma</label>
+
+            <input type="checkbox" name="edu" value="BSc">
+            <label for="">BSc</label>
+
+            <input type="checkbox" name="edu" value="MSc">
+            <label for="">MSc</label> <br><br>
+
+            <label for="">Gender: </label>
+            <input type="radio" name="genRadio" value="Male">
+            <label for="">Male</label>
+            <input type="radio" name="genRadio" value="Femel">
+            <label for="">Femel</label>
+            <input type="radio" name="genRadio" value="Other's">
+            <label for="">Other's</label> <br> <br>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+
+    <script>
+        function validateForm() {
+            let id = document.myForm.id.value;
+            let name = document.myForm.name.value;
+            let email = document.myForm.email.value;
+            let phone = document.myForm.phone.value;
+            let district = document.myForm.dist;
+            let address = document.myForm.address.value;
+            let edu = document.myForm.edu;
+            let genRadio = document.myForm.genRadio;
+
+
+            if (id == "") {
+                alert("ID must be filled out");
+                return false;
+            }
+            if (name == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+            if (email == "") {
+                alert("Email must be filled out");
+                return false;
+            }
+            if (phone.length < 11) {
+                alert("Phone number must be 11 digits");
+                return false;
+            }
+              let districtValue = "";
+            for (let i = 0; i < district.length; i++) {
+                if (district[i].selected) {
+                    districtValue = district[i].value;
+                    break;
+                }
+            }
+            if (!districtValue) {
+                alert("District must be selected");
+                return false;
+
+
+
+            }
+            if (address == "") {
+                alert("Address must be filled out");
+                return false;
+            }
+
+            let eduChecked = false;
+            for (let i = 0; i < edu.length; i++) {
+                if (edu[i].checked) {
+                    eduChecked = true;
+                    break;
+                }
+            }
+            if (!eduChecked) {
+                alert("Education must be selected");
+                return false;
+            }
+
+            let genderChecked = "";
+            for (let i = 0; i < genRadio.length; i++) {
+                if (genRadio[i].checked) {
+                    genderChecked = genRadio[i].value;
+                    break;
+                }
+            }
+            if (!genderChecked) {
+                alert("Gender must be selected");
+                return false;
+            }
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("Email is not valid");
+                return false;
+            }
+
+            var newPage = window.open("", "", "width=600,height=400");
+            newPage.document.write("<h1>Student Information</h1>");
+            newPage.document.write("<p>ID: " + id + "</p>");
+            newPage.document.write("<p>Name: " + name + "</p>");
+            newPage.document.write("<p>Email: " + email + "</p>");
+            newPage.document.write("<p>Phone: " + phone + "</p>");
+            newPage.document.write("<p>District: " + districtValue + "</p>");
+            newPage.document.write("<p>Address: " + address + "</p>");
+            newPage.document.write("<p>Education: " + eduChecked + "</p>");
+            newPage.document.write("<p>Gender: " + genderChecked + "</p>");
+
+            return true;
+
+
+        }
+    </script>
+</body>
+
+</html>
