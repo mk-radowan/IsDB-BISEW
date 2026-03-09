@@ -61,7 +61,7 @@
             <input type="radio" name="genRadio" value="Male">
             <label for="">Male</label>
             <input type="radio" name="genRadio" value="Femel">
-            <label for="">Femel</label>
+            <label for="">Female</label>
             <input type="radio" name="genRadio" value="Other's">
             <label for="">Other's</label> <br> <br>
             <input type="submit" value="Submit">
@@ -92,37 +92,43 @@
                 alert("Email must be filled out");
                 return false;
             }
-            if (phone.length < 11) {
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("Email is not valid");
+                return false;
+            }
+            if (phone.length != 11) {
                 alert("Phone number must be 11 digits");
                 return false;
             }
-              let districtValue = "";
-            for (let i = 0; i < district.length; i++) {
-                if (district[i].selected) {
-                    districtValue = district[i].value;
-                    break;
-                }
-            }
-            if (!districtValue) {
+
+            if (district == "") {
                 alert("District must be selected");
                 return false;
 
+                let districtValue = "";
+                for (let i = 0; i < district.length; i++) {
+                    if (district[i].selected) {
+                        districtValue = district[i].value;
+                        break;
+                    }
+                }
+
+
 
 
             }
-            if (address == "") {
+            if (address == " ") {
                 alert("Address must be filled out");
                 return false;
             }
 
-            let eduChecked = false;
+            let eduChecked = " ";
             for (let i = 0; i < edu.length; i++) {
                 if (edu[i].checked) {
-                    eduChecked = true;
-                    break;
+                    eduChecked += edu[i].value + " ";
                 }
             }
-            if (!eduChecked) {
+            if (eduChecked == "") {
                 alert("Education must be selected");
                 return false;
             }
@@ -138,10 +144,7 @@
                 alert("Gender must be selected");
                 return false;
             }
-            if (!email.includes("@") || !email.includes(".")) {
-                alert("Email is not valid");
-                return false;
-            }
+
 
             var newPage = window.open("", "", "width=600,height=400");
             newPage.document.write("<h1>Student Information</h1>");
