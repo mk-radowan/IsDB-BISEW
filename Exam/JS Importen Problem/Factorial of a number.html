@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial of a number</title>
+    <style>
+        p {
+            width: 500px;
+            height: 500px;
+            text-align: center;
+            justify-items: center;
+            background-color: gray;
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="num"></p>
+    <script>
+        let num = parseInt(prompt("Enter a number: "));
+        let fact = 1;
+
+        if (num < 0) {
+            document.write(num + " : Invaild number");
+        } else {
+            for (let i = 1; i <= num; i++) {
+                fact = fact * i;
+            }
+            document.write("Factorial of " + num + " is = " + fact);
+        }
+    </script>
+</body>
+
+</html>
