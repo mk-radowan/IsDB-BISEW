@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var data = [4, 5, 8, 68, 79, 1];
+        var largest = data[0];
+        var smallest = data[0];
+        var sum = 0;
+
+        for (let i = 0; i < data.length; i++) {
+            if (smallest > data[i]) {
+                smallest = data[i];
+            }
+            if (largest < data[i]) {
+                largest = data[i];
+            }
+            sum += data[i];
+        }
+
+        document.writeln("Arry: " + data + "<br>");
+        document.writeln("smallest number: " + smallest + "<br>");
+        document.writeln("largest number: " + largest + "<br>");
+        document.writeln("sum: " + sum + "<br>");
+    </script>
+</body>
+
+</html>

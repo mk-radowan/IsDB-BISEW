@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="myForm" onsubmit="return dataTable()">
+        <!-- ID -->
+        <label for="">ID:</label>
+        <input type="text" name="dd"> <br><br>
+
+        <!-- Name -->
+        <label for="">Name:</label>
+        <input type="text" name="name" id=""> <br><br>
+
+        <!-- Department -->
+        <label for="">Department:</label>
+        <select name="dept" id="">
+            <option value="N/A">Select your Department</option>
+            <option value="Computer Sceince & Engineering">Computer Sceince & Engineering</option>
+            <option value="Cyber Security">Cyber Security</option>
+            <option value="Oracle Database">Oracle Database</option>
+            <option value="Electronical Engineering">Electronical Engineering</option>
+        </select> <br><br>
+
+
+        <!-- Educational Qualification -->
+        <label for="">Educational Qualification</label>
+        <input type="checkbox" name="eduCheck" value="SSC,">
+        <label for="">SSC</label>
+
+        <input type="checkbox" name="eduCheck" value="HSC,">
+        <label for="">HSC</label>
+
+        <input type="checkbox" name="eduCheck" value="Diploma in Engineering,">
+        <label for="">Diploma in Engineering</label>
+
+        <input type="checkbox" name="eduCheck" value="BSC">
+        <label for="">BSC</label> <br><br>
+
+        <!-- Phone -->
+        <label for="">Phone:</label>
+        <input type="text" name="contact" id=""> <br><br>
+
+
+        <!-- Gender -->
+        <label for="">Gender:</label>
+        <input type="radio" name="checkGen" value="Male">
+        <label for="">Male</label>
+
+        <input type="radio" name="checkGen" value="Female">
+        <label for="">Female</label>
+
+        <input type="radio" name="checkGen" value="Other's">
+        <label for="">Other's</label> <br><br>
+
+
+        <!-- District -->
+        <label for="">District:</label>
+        <select name="dist" id="">
+            <option value="N/A">Select your District</option>
+            <option value="Dhaka">Dhaka</option>
+            <option value="Rangpur">Rangpur</option>
+            <option value="Chottogram">Chottogram</option>
+            <option value="Shylet">Shylet</option>
+        </select> <br><br>
+        <!-- Address -->
+        <label for="">Address:</label>
+        <textarea name="add" id=""></textarea> <br><br>
+
+        <label for="">Password:</label>
+        <input type="password" name="pass" id=""> <br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+    <script>
+        function dataTable() {
+
+            let textId = document.myForm.dd.value;
+            let textName = document.myForm.name.value;
+            let textDept = document.myForm.dept.value;
+            let edu = document.myForm.eduCheck;
+            let phone = document.myForm.contact.value;
+            let gender = document.myForm.checkGen;
+            let district = document.myForm.dist.value;
+            let address = document.myForm.add.value;
+             let password = document.myForm.pass.value;
+
+            // let password = document.myForm.pass.value;
+
+
+
+            let education = " ";
+            for (let i = 0; i < edu.length; i++) {
+                if (edu[i].checked) {
+                    education += edu[i].value + " ";
+                }
+            }
+
+            let checkgen = " ";
+            for (let i = 0; i < gender.length; i++) {
+                if (gender[i].checked) {
+                    checkgen = gender[i].value;
+                }
+            }
+
+
+            let newPage = window.open("", "", "width=600, height=500", );
+            newPage.document.write("<p>ID: " + textId + "</p>");
+            newPage.document.write("<p>Name: " + textName + "</p>");
+            newPage.document.write("<p>Department: " + textDept + "</p>");
+            newPage.document.write("<p>Educational Qualification: " + education + "</p>");
+            newPage.document.write("<p>Phone: " + phone + "</p>");
+            newPage.document.write("<p>Gender: " + checkgen + "</p>");
+            newPage.document.write("<p>District: " + district + "</p>");
+            newPage.document.write("<p>Address: " + address + "</p>");
+            newPage.document.write("<p>Password: " + password + "</p>");
+
+
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>

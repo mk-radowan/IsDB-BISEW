@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" name="myForm" onsubmit="return validateForm()">
+        <fieldset>
+            <legend>Student Registration Form</legend>
+            <label for=""> ID: </label>
+            <input type="text" name="id" id=""> <br> <br>
+            <label for="">Name:</label>
+            <input type="text" name="name" id=""> <br> <br>
+            <label for="">Email:</label>
+            <input type="text" name="email" id=""> <br> <br>
+            <label for="">Phone:</label>
+            <input type="text" name="phone"> <br> <br>
+
+            <label for="">District:</label>
+            <select id="" name="dist">
+                <option value="N/A">Select city</option>
+                <option value="Rangpur">Rangpur</option>
+                <option value="Dhaka">Dhaka</option>
+                <option value="Rajshahi">Rajshahi</option>
+                <option value="Chattogram">Chattogram</option>
+                <option value="Sylhet">Sylhet</option>
+            </select> <br> <br>
+            <label for="">Address:</label>
+            <textarea name="address"></textarea> <br> <br>
+
+            <!-- Education Qualification Start-->
+            <label for="">Education: </label>
+            <input type="checkbox" name="edu" value="SSC">
+            <label for="">SSC</label>
+
+            <input type="checkbox" name="edu" value="HSC">
+            <label for="">HSC</label>
+
+            <input type="checkbox" name="edu" value="Diploma in Engineering,">
+            <label for="">Diploma in Engineering</label>
+
+            <input type="checkbox" name="edu" value="BSc">
+            <label for="">BSc</label>
+
+            <input type="checkbox" name="edu" value="MSc">
+            <label for="">MSc</label> <br><br>
+            <!-- Education Qualification Stop-->
+
+
+
+            <label for="">Gender: </label>
+            <input type="radio" name="genRadio" value="Male">
+            <label for="">Male</label>
+            <input type="radio" name="genRadio" value="Femel">
+            <label for="">Femel</label>
+            <input type="radio" name="genRadio" value="Other's">
+            <label for="">Other's</label> <br><br>
+
+            <label for="">Password:</label>
+            <input type="text" name="pass" id=""> <br><br>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </fieldset>
+    </form>
+
+    <script>
+        function validateForm() {
+            let id = document.myForm.id.value;
+            let name = document.myForm.name.value;
+            let email = document.myForm.email.value;
+            let phone = document.myForm.phone.value;
+            let district = document.myForm.dist.value;
+            let address = document.myForm.address.value;
+            let textEdu = document.myForm.edu;
+            let genRadio = document.myForm.genRadio;
+            let textPass = document.myForm.pass.value;
+
+
+            //ID
+            if (id == "") {
+                alert("ID must be filled out");
+                return false;
+            }
+
+            if (isNaN(id)) {
+                alert("ID is Invalid");
+                return false;
+            }
+
+            // Name
+            if (name == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+
+            // Email
+            if (email == "") {
+                alert("Email must be filled out");
+                return false;
+            }
+
+            if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+                alert("Email is not valid");
+                return false;
+            }
+
+            // Phone
+            if (phone == "") {
+                alert("Phone number is empty");
+                return false;
+            }
+            if (phone.length < 11) {
+                alert("Phone number must be 11 digits");
+                return false;
+            }
+
+            // District
+            if (district == "N/A") {
+                alert("Please Select district");
+                return false;
+
+            }
+
+            // Address
+            if (address == "") {
+                alert("Address must be filled out");
+                return false;
+            }
+
+            // Education
+            let eduChecked = "";
+            for (let i = 0; i < textEdu.length; i++) {
+                if (textEdu[i].checked) {
+                    eduChecked += textEdu[i].value + " ";
+                }
+            }
+            if (eduChecked == "") {
+                alert("Education must be selected");
+                return false;
+            }
+
+
+            // Gender
+            let genderChecked = "";
+            for (let i = 0; i < genRadio.length; i++) {
+                if (genRadio[i].checked) {
+                    genderChecked = genRadio[i].value;
+                }
+            }
+
+            if (genderChecked == "") {
+                alert("Gender must be selected");
+                return false;
+            }
+            // 
+            // Password
+            if (textPass == "") {
+                alert("Password is emty");
+                return false;
+            }
+
+            if (textPass.length < 4 || textPass.length > 8) {
+                alert("Password must be minimum 4 and Maximum 8 charecter ");
+                return false;
+            }
+
+
+            //Output Screen
+            var newPage = window.open("");
+            newPage.document.write("<h1>Student Information</h1>");
+            newPage.document.write("<p>ID: " + id + "</p>");
+            newPage.document.write("<p>Name: " + name + "</p>");
+            newPage.document.write("<p>Email: " + email + "</p>");
+            newPage.document.write("<p>Phone: " + phone + "</p>");
+            newPage.document.write("<p>District: " + district + "</p>");
+            newPage.document.write("<p>Address: " + address + "</p>");
+            newPage.document.write("<p>Education: " + eduChecked + "</p>");
+            newPage.document.write("<p>Gender: " + genderChecked + "</p>");
+            newPage.document.write("<p>Password: " + textPass + "</p>");
+
+            return true;
+
+
+        }
+    </script>
+</body>
+
+</html>

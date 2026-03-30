@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Sequence</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        /* background: linear-gradient(135deg, #ffd6e0, #cde7ff); */
+        font-family: Arial, sans-serif;
+
+    }
+
+    .box {
+        width: 320px;
+        padding: 30px;
+        text-align: center;
+        border-radius: 20px;
+        background: white;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+        color: #ff4d6d;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 18px;
+
+        background: #ffe5ec;
+        padding: 15px;
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <h2> Fibonacci serise</h2>
+        <p id="num">Watting ...</p>
+
+    </div>
+    <script>
+        const number = Number(prompt("Input range"));
+        let first = 0, secenod = 1, next;
+        let result = "";
+
+        for (i = 1; i <= number; i++) {
+            result += first + " ";
+
+            next = first + secenod;
+            first = secenod;
+            secenod = next;
+        }
+
+        document.getElementById("num").innerHTML = "Fibonacci series: <br>" + result;
+    </script>
+</body>
+
+</html>
