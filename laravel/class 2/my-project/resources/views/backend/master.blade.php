@@ -7,7 +7,11 @@
     <meta name="description" content="adminHMD professional admin dashboard template">
     <title>Dashboard | adminHMD</title>
 
-    @stack('styles')
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
 </head>
 
 <body>
@@ -25,7 +29,9 @@
         </div>
     </div>
 
-    @stack('scripts')
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+
 </body>
 
 </html>
