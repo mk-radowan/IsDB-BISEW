@@ -21,7 +21,12 @@
 
 
 
-            <section class="panel mt-3">
+            <section class="panel">
+                @session('success')
+                    <div class="alert alert-success" role="alert">
+                        {{ $value }}
+                    </div>
+                @endsession
                 <div class="panel-header">
                     <div>
                         <h2 class="h5 mb-1 section-title"><i class="bi bi-table" aria-hidden="true"></i><span>Student
@@ -41,7 +46,7 @@
                                 <th scope="col">Number</th>
                                 <th scope="col">Subject</th>
                                 <th scope="col">District</th>
-                                <th scope="col" class="text-end">Action</th>
+                                <th scope="col" class="text-end">Address</th>
                             </tr>
                         </thead>
 
@@ -65,7 +70,12 @@
                                     <td class="text-end"><a class="btn btn-light btn-sm" href="user-details.html">View</a>
                                     </td>
                                 </tr>
-
+                                <form action="{{ route('student.destroy', $student->id) }}" method="POST">
+                                    @csrf
+                                    <button onclick="return confirm('Are you sure to delete this student?')"
+                                        class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                                    <a class="btn btn-info"> <i class="btn btn-pencil"></i></a>
+                                </form>
                             </tbody>
                         @endforeach
 

@@ -42,10 +42,14 @@ class StudentController extends Controller
         $student->gender = $request->gender;
         $student->email = $request->email;
         $student->phone = $request->phone;
-        $student->subject = $request->subject;
         $student->district = $request->district;
+        $subjects = $request->subjects;
+        $subjects = implode(",", $subjects);
+        $student->$subjects = $subjects;
+
 
         $student->save();
+        return redirect('/students')->with('success', 'Successfully Student create');
     }
 
     /**
@@ -77,6 +81,8 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $Student  = Student::find($id);
+        $Student->delete();
+        return redirect('/students');
     }
 }

@@ -19,7 +19,7 @@
             </div>
 
             <section class="row g-3">
-                <div class="col-12 col-xl-8">
+                <div class="col-12 col-lg-12">
                     @if ($errors->any())
                         <div class="altert altert-danger">
                             <h3>Whoops, There were some problems with your input.</h3>
@@ -35,7 +35,7 @@
                         <div class="panel-header">
                             <div>
                                 <h2 class="h5 mb-1 section-title"><i class="bi bi-person-plus"
-                                        aria-hidden="true"></i><span>User Information</span></h2>
+                                        aria-hidden="true"></i><span>Student Information</span></h2>
                                 <p class="text-muted mb-0">Create a user account with validated fields.</p>
                             </div>
                         </div>
@@ -58,35 +58,52 @@
                             </div>
                             <div class="col-md-6"><label class="form-label" for="role">District</label><select
                                     class="form-select" id="role" required>
-                                    <option value="">Choose District </option>
-                                    <option value="1">Rangpur</option>
+                                    <option value="">Choose a District </option>
+                                    <option value="1" {{old('district')==1 ? 'selected'}}>Rangpur</option>
                                     <option value="2">Shylet</option>
                                     <option value="3">Khulna</option>
                                     <option value="4">Barishal</option>
                                 </select>
                                 <div class="invalid-feedback">Choose a role.</div>
                             </div>
-                            <div class="col-md-6"><label class="form-label" for="team">Team</label><select
-                                    class="form-select" id="team" required>
-                                    <option value="">Choose team</option>
-                                    <option>Operations</option>
-                                    <option>Sales</option>
-                                    <option>Content</option>
-                                    <option>Finance</option>
-                                </select>
-                                <div class="invalid-feedback">Choose a team.</div>
-                            </div>
-                            <div class="col-12"><label class="form-label" for="notes">Notes</label>
-                                <textarea class="form-control" id="notes" rows="4" placeholder="Optional onboarding notes"></textarea>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-wrap justify-content-end gap-2 mt-4"><a class="btn btn-outline-secondary"
-                                href="users.html">Cancel</a><button class="btn btn-primary" type="submit"><i
-                                    class="bi bi-person-check" aria-hidden="true"></i> Create User</button></div>
-                    </form>
-                </div>
+                            <div class="col-md-6 ">
+                                <label class="form-label d-block" for="subject">Subject</label>
 
-            </section>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" value="php" id="phpCheck">
+                                    <label class="form-check-label" for="phpCheck">
+                                        JavaScript
+                                    </label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" value="php" id="phpCheck">
+                                    <label class="form-check-label" for="phpCheck">
+                                        PHP
+                                    </label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" value="laravel" id="laravelCheck">
+                                    <label class="form-check-label" for="laravelCheck">
+                                        Laravel
+                                    </label>
+                                </div>
+
+                            </div>
+                            <div class="invalid-feedback">Choose a team.</div>
+                        </div>
+                        <div class="col-12"><label class="form-label" for="notes">Address</label>
+                            <textarea class="form-control" id="notes" rows="4" placeholder="Optional onboarding notes"></textarea>
+                        </div>
+                </div>
+                <div class="d-flex flex-wrap justify-content-end gap-2 mt-4"><a class="btn btn-outline-secondary"
+                        href="users.html">Cancel</a><button class="btn btn-primary" type="submit"><i
+                            class="bi bi-person-check" aria-hidden="true"></i> Create User</button></div>
+                </form>
+        </div>
+
+        </section>
         </div>
     </main>
 @endpush
