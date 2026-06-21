@@ -36,6 +36,10 @@ class StudentController extends Controller
             'email' => 'email|required|unique:students,email'
         ]);
 
+        $rand_number = rand(1, 20);
+        $ext_lower = strtolower($request->photo->extension);
+        $filename = $rand_number . time(). ".".$ext_lower;
+        $request->photo->move(public_path('images'),$filename);
 
         $student = new Student;
         $student->name = $request->fullname;
