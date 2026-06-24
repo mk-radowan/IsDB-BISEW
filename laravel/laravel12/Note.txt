@@ -1,0 +1,10 @@
+
+php artisan migrate
+
+
+
+
+php artisan make:model Product -mcr
+
+1. Migration
+2. 
